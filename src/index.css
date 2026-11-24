@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-cream: #FFFDF7;
+  --color-cream-warm: #FFF5EA;
+  --color-blush: #FFF7FB;
+  --color-plum: #2B1A2F;
+  --color-plum-muted: #564147;
+  --color-pink-pop: #FF6EA7;
+  --color-pink-deep: #AB2B64;
+  --color-sky-pop: #70D6FF;
+  --color-lavender-pop: #D8B4F8;
+  --color-mint-pop: #7AE582;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #FFFDF7;
+    color: #2B1A2F;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: "Syne", sans-serif;
+  }
+}
+
+/* Purikura Pop subtle dot-grid sticker-sheet backdrop */
+.purikura-bg {
+  background-color: #FFFDF7;
+  background-image: radial-gradient(rgba(171, 43, 100, 0.12) 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+}
+
+/* Chunky Neo-Pop borders & offset shadows */
+.pop-card {
+  border: 2.5px solid #2B1A2F;
+  box-shadow: 5px 5px 0 #2B1A2F;
+}
+
+.pop-card-sm {
+  border: 2.5px solid #2B1A2F;
+  box-shadow: 3px 3px 0 #2B1A2F;
+}
+
+.pop-gloss {
+  box-shadow: inset 0 2.5px 0 rgba(255, 255, 255, 0.65), 4px 4px 0 #2B1A2F;
+}
+
+.pop-btn {
+  border: 2.5px solid #2B1A2F;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6), 4px 4px 0 #2B1A2F;
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 140ms ease;
+}
+
+.pop-btn:hover:not(:disabled) {
+  transform: translate(1.5px, 1.5px);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6), 2.5px 2.5px 0 #2B1A2F;
+}
+
+.pop-btn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 #2B1A2F;
+}
+
+.pop-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pop-chip {
+  border: 2px solid #2B1A2F;
+  transition: transform 130ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 130ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 130ms ease;
+}
+
+.pop-chip-active {
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.7), 2.5px 2.5px 0 #2B1A2F;
+  transform: translate(-1px, -1px);
+}
+
+/* Candy-pearl range slider */
+input[type="range"].pop-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  border-radius: 9999px;
+  border: 2px solid #2B1A2F;
+  background: #FFFDF7;
+  outline: none;
+}
+
+input[type="range"].pop-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: #FF6EA7;
+  border: 2.5px solid #2B1A2F;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.75), 2px 2px 0 #2B1A2F;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+input[type="range"].pop-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.08);
+}
+
+input[type="range"].pop-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: #FF6EA7;
+  border: 2.5px solid #2B1A2F;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.75), 2px 2px 0 #2B1A2F;
+  cursor: pointer;
+}
+
+/* Shutter flash animation */
+@keyframes shutterFlash {
+  0% {
+    opacity: 0.96;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-shutter-flash {
+  animation: shutterFlash 380ms ease-out forwards;
+}
+
+@keyframes popBounce {
+  0% {
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-pop-bounce {
+  animation: popBounce 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom scrollbar for sticker/filter trays */
+.pop-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.pop-scroll::-webkit-scrollbar-track {
+  background: #FFF5EA;
+  border-radius: 9999px;
+}
+.pop-scroll::-webkit-scrollbar-thumb {
+  background: #D8B4F8;
+  border-radius: 9999px;
+  border: 1.5px solid #2B1A2F;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-shutter-flash,
+  .animate-pop-bounce {
+    animation: none;
+  }
+  .pop-btn,
+  .pop-chip {
+    transition: none;
+  }
+}
