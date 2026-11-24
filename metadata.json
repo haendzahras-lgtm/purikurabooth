@@ -1,0 +1,6 @@
+{
+  "name": "Purikura Pop",
+  "description": "Y2K Japanese print-club photobooth with live webcam capture, countdown timer, stickers, gel-pen doodles, and downloadable photo strips.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
